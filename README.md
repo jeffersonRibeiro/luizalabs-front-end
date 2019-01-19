@@ -1,6 +1,6 @@
-## Luizalabs Front End Test [![CircleCI](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end.svg?style=shield)](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end)
+## Luizalabs Front End Test [![CircleCI](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end.svg?style=shield&circle-token=5a8843f9fcb781df4aa43bc76fc0f1460e012f8a)](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end)
 
-## [Live Demo](https://luizalabs-229113.firebaseapp.com/favorites)
+## [Live Demo](https://luizalabs-229113.firebaseapp.com/)
 
 ## Getting started
 
