@@ -2,8 +2,10 @@ import React from 'react';
 
 import NavigationItem from './NavigationItem';
 
+import './style.scss';
+
 const NavigationItems = () => (
-  <nav class="navigation-links">
+  <nav class="navigation-items">
     <ul>
       <NavigationItem path="/search" value="Search" />
       <NavigationItem path="/favorites" value="Favorites" />
