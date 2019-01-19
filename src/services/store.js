@@ -19,9 +19,11 @@ export default initialState => {
   );
 
   store.subscribe(() => {
-    // const state = store.getState();
-    // const persist = {};
-    // window.localStorage.setItem('state', JSON.stringify(persist));
+    const state = store.getState();
+    const persist = {
+      favorite: state.favorite
+    };
+    window.localStorage.setItem('state', JSON.stringify(persist));
   });
 
   return store;

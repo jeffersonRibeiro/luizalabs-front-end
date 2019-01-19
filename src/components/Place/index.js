@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-const Place = ({ place }) => {
+const Place = ({ place, noImage }) => {
   if (!place) {
     return null;
   }
@@ -13,13 +13,15 @@ const Place = ({ place }) => {
       <p>{place.neighborhood}</p>
       <p>{place.city}</p>
       <p>{place.zipCode}</p>
-      <img
-        src={`https://maps.googleapis.com/maps/api/staticmap?center=${
-          place.zipCode
-        }&zoom=18&markers=size:mid%7Ccolor:red%7C${
-          place.zipCode
-        }&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
-      />
+      {!noImage && (
+        <img
+          src={`https://maps.googleapis.com/maps/api/staticmap?center=${
+            place.zipCode
+          }&zoom=18&markers=size:mid%7Ccolor:red%7C${
+            place.zipCode
+          }&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
+        />
+      )}
     </div>
   );
 };

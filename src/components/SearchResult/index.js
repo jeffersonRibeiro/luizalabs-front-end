@@ -5,6 +5,7 @@ import MdClose from 'react-ionicons/lib/MdClose';
 
 import Place from '../Place';
 import { isObjectEmpty } from '../../services/util';
+import { addFavorite } from '../../services/favorites/actions';
 
 import './style.scss';
 
@@ -27,21 +28,25 @@ class SearchResult extends Component {
     let { searchResult } = this.props;
     const { isResultVisible } = this.state;
 
-    searchResult = {
-      city: 'São Paulo - SP',
-      neighborhood: 'Vila Indiana',
-      street: 'Rua Abadia dos Dourados',
-      zipCode: '05586-030'
-    };
+    // searchResult = {
+    //   city: 'São Paulo - SP',
+    //   neighborhood: 'Vila Indiana',
+    //   street: 'Rua Abadia dos Dourados',
+    //   zipCode: '05586-030'
+    // };
 
     if (isObjectEmpty(searchResult) || !isResultVisible) {
       return null;
     }
 
+    if (!!searchResult.erro) {
+      return <div>CEP inválido!</div>;
+    }
+
     return (
       <div className="search-result">
         <div className="search-result-actions">
-          <button>
+          <button onClick={() => this.props.addFavorite(searchResult)}>
             <IosHeartOutline />
           </button>
           <button onClick={this.closeResult}>
@@ -60,5 +65,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  {}
+  { addFavorite }
 )(SearchResult);

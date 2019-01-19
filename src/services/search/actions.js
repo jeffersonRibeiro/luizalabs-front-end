@@ -7,6 +7,13 @@ export const fetchCEP = cep => dispatch => {
   return axios
     .get(CEP_API(cep))
     .then(res => {
+      if (!!res.data.erro) {
+        return dispatch({
+          type: FETCH_CEP,
+          payload: res.data
+        });
+      }
+
       const { logradouro, bairro, localidade, uf, cep } = res.data;
       const result = {
         street: logradouro,
@@ -14,6 +21,7 @@ export const fetchCEP = cep => dispatch => {
         city: `${localidade} - ${uf}`,
         zipCode: cep
       };
+
       return dispatch({
         type: FETCH_CEP,
         payload: result

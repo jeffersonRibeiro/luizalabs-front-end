@@ -1,0 +1,7 @@
+.favorite-places {
+  .place {
+    &:nth-child(odd) {
+      background: #f3eafb;
+    }
+  }
+}
