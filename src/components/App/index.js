@@ -4,10 +4,11 @@ import getRoutes from '../../routes';
 import NavigationItems from '../NavigationItems';
 
 import './style.scss';
+import Logo from './Logo';
 
 const App = () => (
   <div className="app">
-    <div className="app-title">Imagine a cool name for an app!</div>
+    <Logo />
     <div className="app-content">
       <NavigationItems />
       <main>{getRoutes()}</main>

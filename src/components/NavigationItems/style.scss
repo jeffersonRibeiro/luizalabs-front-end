@@ -5,8 +5,9 @@
     list-style-type: none;
 
     li {
-      &:hover {
-        background: #eee;
+      svg {
+        vertical-align: middle;
+        margin-right: 10px;
       }
 
       a {
@@ -16,6 +17,13 @@
         padding: 20px 10px;
         display: block;
         font-weight: 700;
+        transition: background 0.2s;
+
+        &:not(.active) {
+          &:hover {
+            background: #f3eafb;
+          }
+        }
 
         &.active {
           border-bottom: 3px solid #7e40af;

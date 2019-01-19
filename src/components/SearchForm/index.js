@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './style.scss';
 class SearchForm extends Component {
   state = {
     cep: ''
@@ -21,12 +22,13 @@ class SearchForm extends Component {
       <form onSubmit={this.handleSubmit} className="search-form">
         <div>CEP</div>
         <input
+          className="search-input"
           type="text"
           name="cep"
           onChange={this.handleChange('cep')}
           value={cep}
         />
-        <input type="submit" value="Search" />
+        <input className="search-button" type="submit" value="Search" />
       </form>
     );
   }
