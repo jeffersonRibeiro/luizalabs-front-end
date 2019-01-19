@@ -1,5 +1,8 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-const App = () => <div>Olá</div>;
+import getRoutes from '../../routes';
+
+const App = () => <BrowserRouter>{getRoutes()}</BrowserRouter>;
 
 export default App;
