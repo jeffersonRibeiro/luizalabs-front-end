@@ -18,6 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage",
+    "format": "prettier --write \"**/*.+(js|json|css)\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,6 +32,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "firebase-tools": "^6.3.0"
   }
 }
