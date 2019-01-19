@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { fetchCEP } from '../../services/search/actions';
 
 import './style.scss';
 class SearchForm extends Component {
   state = {
-    cep: ''
+    cep: '05586030'
   };
 
   handleSubmit = e => {
+    this.props.fetchCEP(this.state.cep);
+
     e.preventDefault();
-    console.log(this.state.cep);
   };
 
   handleChange = prop => e => {
@@ -34,4 +38,7 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm;
+export default connect(
+  null,
+  { fetchCEP }
+)(SearchForm);
