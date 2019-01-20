@@ -43,7 +43,8 @@ body {
         }
 
         .spinner.lds-ring {
-          left: 118px;
+          left: 50%;
+          margin-left: -25px;
         }
       }
     }
