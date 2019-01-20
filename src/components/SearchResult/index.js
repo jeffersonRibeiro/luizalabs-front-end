@@ -13,9 +13,12 @@ class SearchResult extends Component {
     if (isObjectEmpty(searchResult)) {
       return null;
     }
-
-    if (!!searchResult.erro) {
-      return <div>CEP inválido!</div>;
+    if (!!searchResult.erro && !!searchResult.erro.message) {
+      window.alert(searchResult.erro.message);
+      return null;
+    } else if (!!searchResult.erro) {
+      window.alert('CEP inválido!');
+      return null;
     }
 
     return (

@@ -29,5 +29,13 @@ export const fetchCEP = cep => dispatch => {
     })
     .catch(err => {
       console.log('Could not fetch the Viacep api. Try again later.');
+      return dispatch({
+        type: FETCH_CEP,
+        payload: {
+          erro: {
+            message: err
+          }
+        }
+      });
     });
 };

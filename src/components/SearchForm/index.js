@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MaskedInput from 'react-text-mask';
 
 import { fetchCEP } from '../../services/search/actions';
 
 import './style.scss';
 class SearchForm extends Component {
   state = {
-    cep: '05586030'
+    cep: ''
   };
 
   handleSubmit = e => {
-    this.props.fetchCEP(this.state.cep);
-
     e.preventDefault();
+
+    const { cep } = this.state;
+    if (cep.length !== 9) {
+      window.alert('CEP inválido!');
+      return;
+    }
+    this.props.fetchCEP(this.state.cep);
   };
 
   handleChange = prop => e => {
@@ -25,13 +31,17 @@ class SearchForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="search-form">
         <div>CEP</div>
-        <input
+        <MaskedInput
+          mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
+          guide={false}
           className="search-input"
           type="text"
           name="cep"
           onChange={this.handleChange('cep')}
           value={cep}
+          placeholder="Type here"
         />
+
         <input className="search-button" type="submit" value="Search" />
       </form>
     );
