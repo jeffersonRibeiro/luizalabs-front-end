@@ -35,7 +35,7 @@ class SearchForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className="search-form">
-        <div class="search-label">CEP</div>
+        <div className="search-label">CEP</div>
         <MaskedInput
           mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
           guide={false}
