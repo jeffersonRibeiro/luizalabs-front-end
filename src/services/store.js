@@ -8,13 +8,22 @@ export default initialState => {
     JSON.parse(window.localStorage.getItem('state')) || initialState;
   const middleware = [thunk];
 
+  const enhancers = [];
+
+  if (process.env.NODE_ENV === 'development') {
+    const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+
+    if (typeof devToolsExtension === 'function') {
+      enhancers.push(devToolsExtension());
+    }
+  }
+
   const store = createStore(
     rootReducer,
     initialState,
     compose(
       applyMiddleware(...middleware),
-      window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__()
+      ...enhancers
     )
   );
 
