@@ -1,10 +1,11 @@
 .favorite-places {
+  display: flex;
+  flex-wrap: wrap;
+
   .place {
-    border: 2px solid transparent;
+    width: 50%;
+
     &:hover {
-      border: 2px solid #f0f6fd;
-    }
-    &:nth-child(odd) {
       background: #fdfff6;
     }
   }

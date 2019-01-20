@@ -52,9 +52,12 @@ class Place extends Component {
     return (
       <div className="place">
         <h3 className="place-title">{place.street}</h3>
-        <p>{place.neighborhood}</p>
-        <p>{place.city}</p>
-        <p>{place.zipCode}</p>
+        <div className="place-desc">
+          <p>{place.neighborhood}</p>
+          <p>{place.city}</p>
+          <p>{place.zipCode}</p>
+        </div>
+
         {(!noMap || this.state.withMap) && (
           <img
             className="google-map"
