@@ -38,6 +38,12 @@ body {
         padding: 0;
         width: 100%;
 
+        .search-result {
+          .place {
+            padding: 0;
+          }
+        }
+
         .search-label {
           width: 10%;
         }

@@ -51,7 +51,7 @@ class Place extends Component {
 
     return (
       <div className="place">
-        <h3>{place.street}</h3>
+        <h3 className="place-title">{place.street}</h3>
         <p>{place.neighborhood}</p>
         <p>{place.city}</p>
         <p>{place.zipCode}</p>
