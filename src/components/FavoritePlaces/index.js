@@ -12,7 +12,7 @@ class SearchResult extends Component {
     let { favoritePlaces } = this.props;
 
     if (favoritePlaces.length === 0) {
-      return <div>Vazio</div>;
+      return <div>Empty</div>;
     }
 
     const places = favoritePlaces.map(p => (

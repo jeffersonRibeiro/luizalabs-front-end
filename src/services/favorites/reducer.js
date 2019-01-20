@@ -11,6 +11,11 @@ export default function(state = initialState, action) {
         ...state,
         places: addFavorite(state.places, action.payload)
       };
+    case REMOVE_FAVORITE:
+      return {
+        ...state,
+        places: removeFavorite(state.places, action.payload)
+      };
     default:
       return state;
   }
@@ -23,4 +28,8 @@ function addFavorite(places, newPlace) {
   } else {
     return places;
   }
+}
+
+function removeFavorite(places, newPlace) {
+  return places.filter(p => p.zipCode !== newPlace.zipCode);
 }

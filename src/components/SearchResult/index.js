@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import IosHeartOutline from 'react-ionicons/lib/IosHeartOutline';
+import IosHeart from 'react-ionicons/lib/IosHeart';
 import MdClose from 'react-ionicons/lib/MdClose';
 
 import Place from '../Place';
 import { isObjectEmpty } from '../../services/util';
-import { addFavorite } from '../../services/favorites/actions';
+import { addFavorite, removeFavorite } from '../../services/favorites/actions';
 
 import './style.scss';
 
@@ -25,7 +26,7 @@ class SearchResult extends Component {
   }
 
   render() {
-    let { searchResult } = this.props;
+    let { searchResult, favoritePlaces } = this.props;
     const { isResultVisible } = this.state;
 
     // searchResult = {
@@ -43,14 +44,31 @@ class SearchResult extends Component {
       return <div>CEP inválido!</div>;
     }
 
+    let favoriteButton = null;
+    const alreadyInFavorite = !!favoritePlaces.filter(
+      p => p.zipCode === searchResult.zipCode
+    ).length;
+
+    if (alreadyInFavorite) {
+      favoriteButton = (
+        <button onClick={() => this.props.removeFavorite(searchResult)}>
+          <IosHeart color="#48dbfb" />
+        </button>
+      );
+    } else {
+      favoriteButton = (
+        <button onClick={() => this.props.addFavorite(searchResult)}>
+          <IosHeart color="#c8d6e5" />
+        </button>
+      );
+    }
+
     return (
       <div className="search-result">
         <div className="search-result-actions">
-          <button onClick={() => this.props.addFavorite(searchResult)}>
-            <IosHeartOutline />
-          </button>
+          {favoriteButton}
           <button onClick={this.closeResult}>
-            <MdClose />
+            <MdClose color="#576574" />
           </button>
         </div>
         <Place place={searchResult} />
@@ -60,10 +78,11 @@ class SearchResult extends Component {
 }
 
 const mapStateToProps = state => ({
-  searchResult: state.search.result
+  searchResult: state.search.result,
+  favoritePlaces: state.favorite.places
 });
 
 export default connect(
   mapStateToProps,
-  { addFavorite }
+  { addFavorite, removeFavorite }
 )(SearchResult);
