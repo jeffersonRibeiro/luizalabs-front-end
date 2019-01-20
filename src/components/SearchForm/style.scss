@@ -4,8 +4,14 @@
   margin: 15px 0 30px 0;
   position: relative;
 
+  .search-label {
+    width: 10%;
+  }
+
   .search-input {
     outline: none;
+    width: 46%;
+
     margin: 0 10px;
     padding: 6px 5px;
     border-radius: 3px;
@@ -17,6 +23,8 @@
   }
 
   .search-button {
+    width: 44%;
+
     background: #7e40af;
     color: #fff;
     border: none;

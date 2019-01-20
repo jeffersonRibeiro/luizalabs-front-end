@@ -21,13 +21,13 @@ const NavigationItems = ({ favoritePlaces }) => {
   return (
     <nav className="navigation-items">
       <ul>
-        <NavigationItem path="/search">
-          <IosSearch />
-          Search
-        </NavigationItem>
         <NavigationItem path="/favorites">
           {hearthIcon}
           Favorites
+        </NavigationItem>
+        <NavigationItem path="/search">
+          <IosSearch />
+          Search
         </NavigationItem>
       </ul>
     </nav>

@@ -1,10 +1,16 @@
 .navigation-items {
+  width: 100%;
+  margin-bottom: 20px;
   ul {
+    display: flex;
+
     padding: 0;
     margin: 0;
     list-style-type: none;
 
     li {
+      width: 50%;
+
       svg {
         vertical-align: middle;
         margin-right: 10px;

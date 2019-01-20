@@ -1,7 +1,7 @@
 .app {
-  max-width: 850px;
+  max-width: 650px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px;
 
   &-logo {
     text-align: center;
@@ -16,14 +16,14 @@
 
   &-content {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .navigation-items {
-    width: 20%;
+    width: 100%;
   }
 
   main {
-    padding: 10px 20px;
-    width: 80%;
+    width: 100%;
   }
 }
