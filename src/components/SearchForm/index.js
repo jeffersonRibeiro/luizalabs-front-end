@@ -9,7 +9,7 @@ import './style.scss';
 class SearchForm extends Component {
   state = {
     cep: '',
-    isLoading: true
+    isLoading: false
   };
 
   handleSubmit = e => {
