@@ -1,16 +1,8 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import asyncComponent from './scenes/components/hoc/asyncComponent';
-
-const Search = from('./scenes/Search');
-const Favorites = from('./scenes/Favorites');
-
-function from(path) {
-  return asyncComponent(() => {
-    return import(`${path}/index.js`);
-  });
-}
+import Search from './scenes/Search';
+import Favorites from './scenes/Favorites';
 
 export default () => (
   <Switch>
