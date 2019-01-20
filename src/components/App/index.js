@@ -5,9 +5,11 @@ import NavigationItems from '../NavigationItems';
 
 import './style.scss';
 import Logo from './Logo';
+import Corner from '../github/Corner';
 
 const App = () => (
   <div className="app">
+    <Corner />
     <Logo />
     <div className="app-content">
       <NavigationItems />
