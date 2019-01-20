@@ -9,8 +9,8 @@
   }
 
   .search-input {
-    outline: none;
     width: 46%;
+    outline-color: #48dbfb;
 
     margin: 0 10px;
     padding: 6px 5px;
@@ -24,6 +24,7 @@
 
   .search-button {
     width: 44%;
+    outline-color: #48dbfb;
 
     background: #7e40af;
     color: #fff;
