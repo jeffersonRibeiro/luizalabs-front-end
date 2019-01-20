@@ -9,7 +9,7 @@ import './style.scss';
 class SearchForm extends Component {
   state = {
     cep: '',
-    isLoading: false
+    isLoading: true
   };
 
   handleSubmit = e => {
@@ -35,7 +35,7 @@ class SearchForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className="search-form">
-        <div>CEP</div>
+        <div class="search-label">CEP</div>
         <MaskedInput
           mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
           guide={false}

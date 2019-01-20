@@ -38,13 +38,19 @@ body {
         padding: 0;
         width: 100%;
 
+        .search-label {
+          width: 10%;
+        }
         .search-input {
-          width: 150px;
+          width: 46%;
+        }
+        .search-button {
+          width: 44%;
         }
 
         .spinner.lds-ring {
           left: 50%;
-          margin-left: -25px;
+          margin-left: -12px;
         }
       }
     }
