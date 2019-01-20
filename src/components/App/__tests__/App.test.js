@@ -40,7 +40,5 @@ it('should render the favorites scene when url /favorites', () => {
     </MemoryRouter>
   );
 
-  console.log(wrapped.debug());
-
   expect(wrapped.find(Favorites).length).toBe(1);
 });

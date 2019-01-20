@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Place from '../Place';
-// import { addFavorite } from '../../services/favorites/actions';
 
 import './style.scss';
 
 class SearchResult extends Component {
+  static propTypes = {
+    favoritePlaces: PropTypes.array.isRequired
+  };
+
   render() {
     let { favoritePlaces } = this.props;
 
