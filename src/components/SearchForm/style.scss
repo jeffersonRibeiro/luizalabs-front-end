@@ -1,3 +1,5 @@
+@import '../../assets/styles/_colors';
+
 .search-form {
   display: flex;
   align-items: center;
@@ -10,7 +12,7 @@
 
   .search-input {
     width: 46%;
-    outline-color: #48dbfb;
+    outline-color: $secondary-color;
 
     margin: 0 10px;
     padding: 6px 5px;
@@ -18,22 +20,22 @@
     border: 2px solid #a6aaaf;
 
     &:focus {
-      border-color: #48dbfb;
+      border-color: $secondary-color;
     }
   }
 
   .search-button {
     width: 44%;
-    outline-color: #48dbfb;
+    outline-color: $secondary-color;
 
-    background: #7e40af;
+    background: $primary-color;
     color: #fff;
     border: none;
     border-radius: 2px;
     padding: 8px 15px;
 
     &:hover {
-      background: #9a61c7;
+      background: $primary-light-color;
     }
   }
 }

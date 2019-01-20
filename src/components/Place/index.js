@@ -5,6 +5,7 @@ import IosHeart from 'react-ionicons/lib/IosHeart';
 import MdMap from 'react-ionicons/lib/MdMap';
 
 import { addFavorite, removeFavorite } from '../../services/favorites/actions';
+import { theme } from '../../services/util';
 
 import './style.scss';
 
@@ -38,7 +39,7 @@ class Place extends Component {
     if (alreadyInFavorite) {
       favoriteButton = (
         <button onClick={() => this.props.removeFavorite(place)}>
-          <IosHeart color="#48dbfb" />
+          <IosHeart color={theme.heartColor} />
         </button>
       );
     } else {
@@ -73,7 +74,7 @@ class Place extends Component {
           {favoriteButton}
           {noMap && !this.state.withMap && (
             <button className="show-map-button" onClick={this.showMap}>
-              <MdMap color="#7e40af" />
+              <MdMap color={theme.primaryColor} />
             </button>
           )}
         </div>

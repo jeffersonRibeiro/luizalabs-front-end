@@ -7,13 +7,15 @@ import PropTypes from 'prop-types';
 
 import NavigationItem from './NavigationItem';
 
+import { theme } from '../../services/util';
+
 import './style.scss';
 
 const NavigationItems = ({ favoritePlaces }) => {
   let hearthIcon = null;
 
   if (favoritePlaces.length > 0) {
-    hearthIcon = <IosHeart beat color="#48dbfb" />;
+    hearthIcon = <IosHeart beat color={theme.heartColor} />;
   } else {
     hearthIcon = <IosHeart color="#c8d6e5" />;
   }
