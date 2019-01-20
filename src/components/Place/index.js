@@ -22,6 +22,7 @@ class Place extends Component {
         <p>{place.zipCode}</p>
         {(!noImage || this.state.showImage) && (
           <img
+            alt={place.street}
             src={`https://maps.googleapis.com/maps/api/staticmap?center=${
               place.zipCode
             }&zoom=18&markers=size:mid%7Ccolor:red%7C${
