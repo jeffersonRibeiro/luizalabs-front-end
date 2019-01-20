@@ -17,7 +17,7 @@ class SearchForm extends Component {
 
     const { cep } = this.state;
     if (cep.length !== 9) {
-      window.alert('CEP inválido!');
+      alert('CEP inválido!');
       return;
     }
     this.setState({ isLoading: true });

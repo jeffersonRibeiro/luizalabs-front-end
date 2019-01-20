@@ -11,17 +11,11 @@ class SearchResult extends Component {
   static propTypes = {
     searchResult: PropTypes.object
   };
+
   render() {
     let { searchResult } = this.props;
 
-    if (isObjectEmpty(searchResult)) {
-      return null;
-    }
-    if (!!searchResult.erro && !!searchResult.erro.message) {
-      window.alert(searchResult.erro.message);
-      return null;
-    } else if (!!searchResult.erro) {
-      window.alert('CEP inválido!');
+    if (isObjectEmpty(searchResult) || searchResult.error) {
       return null;
     }
 

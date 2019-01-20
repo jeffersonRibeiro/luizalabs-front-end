@@ -12,9 +12,12 @@ export const fetchCEP = (cep, callback) => dispatch => {
       }
 
       if (!!res.data.erro) {
+        alert('CEP inválido!');
         return dispatch({
           type: FETCH_CEP,
-          payload: res.data
+          payload: {
+            error: res.data.erro
+          }
         });
       }
 
@@ -31,14 +34,13 @@ export const fetchCEP = (cep, callback) => dispatch => {
         payload: result
       });
     })
-    .catch(err => {
+    .catch(error => {
       console.log('Could not fetch the Viacep api. Try again later.');
+      alert(error);
       return dispatch({
         type: FETCH_CEP,
         payload: {
-          erro: {
-            message: err
-          }
+          error
         }
       });
     });
