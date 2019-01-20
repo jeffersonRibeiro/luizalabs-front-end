@@ -1,17 +1,45 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import IosHeart from 'react-ionicons/lib/IosHeart';
+import MdMap from 'react-ionicons/lib/MdMap';
+
+import { addFavorite, removeFavorite } from '../../services/favorites/actions';
 
 import './style.scss';
 
 class Place extends Component {
   state = {
-    showImage: false
+    withMap: false
+  };
+
+  showMap = () => {
+    this.setState({ withMap: true });
   };
 
   render() {
-    const { place, noImage } = this.props;
+    const { place, noMap, favoritePlaces } = this.props;
 
     if (!place) {
       return null;
+    }
+
+    let favoriteButton = null;
+    const alreadyInFavorite = !!favoritePlaces.filter(
+      favoritePlace => favoritePlace.zipCode === place.zipCode
+    ).length;
+
+    if (alreadyInFavorite) {
+      favoriteButton = (
+        <button onClick={() => this.props.removeFavorite(place)}>
+          <IosHeart color="#48dbfb" />
+        </button>
+      );
+    } else {
+      favoriteButton = (
+        <button onClick={() => this.props.addFavorite(place)}>
+          <IosHeart color="#c8d6e5" />
+        </button>
+      );
     }
 
     return (
@@ -20,7 +48,7 @@ class Place extends Component {
         <p>{place.neighborhood}</p>
         <p>{place.city}</p>
         <p>{place.zipCode}</p>
-        {(!noImage || this.state.showImage) && (
+        {(!noMap || this.state.withMap) && (
           <img
             alt={place.street}
             src={`https://maps.googleapis.com/maps/api/staticmap?center=${
@@ -30,10 +58,24 @@ class Place extends Component {
             }&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
           />
         )}
-        {noImage && <p>show image</p>}
+        <div className="place-actions">
+          {favoriteButton}
+          {noMap && !this.state.withMap && (
+            <button onClick={this.showMap}>
+              <MdMap color="#7e40af" />
+            </button>
+          )}
+        </div>
       </div>
     );
   }
 }
 
-export default Place;
+const mapStateToProps = state => ({
+  favoritePlaces: state.favorite.places
+});
+
+export default connect(
+  mapStateToProps,
+  { addFavorite, removeFavorite }
+)(Place);

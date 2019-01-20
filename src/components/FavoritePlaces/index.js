@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MdClose from 'react-ionicons/lib/MdClose';
 
 import Place from '../Place';
 // import { addFavorite } from '../../services/favorites/actions';
@@ -16,7 +15,7 @@ class SearchResult extends Component {
     }
 
     const places = favoritePlaces.map(p => (
-      <Place key={p.zipCode} place={p} noImage />
+      <Place key={p.zipCode} place={p} noMap />
     ));
 
     return <div className="favorite-places">{places}</div>;

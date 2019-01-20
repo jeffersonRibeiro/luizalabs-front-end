@@ -1,7 +1,26 @@
 .place {
+  position: relative;
   padding: 10px;
 
   img {
     width: 100%;
+  }
+
+  &-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      outline: none;
+      background: transparent;
+      border: 0;
+      padding: 10px;
+      margin-left: 5px;
+
+      &:hover {
+        background: #eee;
+      }
+    }
   }
 }

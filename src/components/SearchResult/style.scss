@@ -1,21 +1,7 @@
 .search-result {
-  position: relative;
-
-  &-actions {
-    position: absolute;
-    right: 0;
-
+  .place-actions {
     button {
-      outline: none;
-      background: transparent;
-      border: 0;
-      padding: 10px;
-      margin-left: 5px;
       border-radius: 3px;
-
-      &:hover {
-        background: #eee;
-      }
     }
   }
 }
