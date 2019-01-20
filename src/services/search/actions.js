@@ -3,10 +3,14 @@ import axios from 'axios';
 
 import { CEP_API } from '../util';
 
-export const fetchCEP = cep => dispatch => {
+export const fetchCEP = (cep, callback) => dispatch => {
   return axios
     .get(CEP_API(cep))
     .then(res => {
+      if (!!callback) {
+        callback();
+      }
+
       if (!!res.data.erro) {
         return dispatch({
           type: FETCH_CEP,
