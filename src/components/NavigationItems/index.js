@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import IosSearch from 'react-ionicons/lib/IosSearch';
 import IosHeart from 'react-ionicons/lib/IosHeart';
+import PropTypes from 'prop-types';
 
 import NavigationItem from './NavigationItem';
 
@@ -31,6 +32,10 @@ const NavigationItems = ({ favoritePlaces }) => {
       </ul>
     </nav>
   );
+};
+
+NavigationItems.propTypes = {
+  favoritePlaces: PropTypes.array
 };
 
 const mapStateToProps = state => ({

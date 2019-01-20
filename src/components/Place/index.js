@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import IosHeart from 'react-ionicons/lib/IosHeart';
 import MdMap from 'react-ionicons/lib/MdMap';
@@ -8,6 +9,12 @@ import { addFavorite, removeFavorite } from '../../services/favorites/actions';
 import './style.scss';
 
 class Place extends Component {
+  static propTypes = {
+    place: PropTypes.object,
+    noMap: PropTypes.bool,
+    favoritePlaces: PropTypes.array
+  };
+
   state = {
     withMap: false
   };
@@ -50,6 +57,7 @@ class Place extends Component {
         <p>{place.zipCode}</p>
         {(!noMap || this.state.withMap) && (
           <img
+            className="google-map"
             alt={place.street}
             src={`https://maps.googleapis.com/maps/api/staticmap?center=${
               place.zipCode
@@ -61,7 +69,7 @@ class Place extends Component {
         <div className="place-actions">
           {favoriteButton}
           {noMap && !this.state.withMap && (
-            <button onClick={this.showMap}>
+            <button className="show-map-button" onClick={this.showMap}>
               <MdMap color="#7e40af" />
             </button>
           )}
