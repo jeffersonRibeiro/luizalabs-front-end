@@ -15,8 +15,23 @@
     }
   }
 
-  img {
+  .google-map {
     width: 100%;
+    padding-bottom: 67%;
+    position: relative;
+    background: #fff;
+    background-image: url('./Map/loading-placeholder.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
   }
 
   &-actions {
