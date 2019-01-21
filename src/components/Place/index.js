@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import IosHeart from 'react-ionicons/lib/IosHeart';
 import MdMap from 'react-ionicons/lib/MdMap';
 
+import Map from './Map';
 import { addFavorite, removeFavorite } from '../../services/favorites/actions';
 import { theme } from '../../services/util';
 
@@ -66,14 +67,10 @@ class Place extends Component {
         </div>
 
         {(!noMap || this.state.withMap) && (
-          <img
-            className="google-map"
+          <Map
+            zipCode={place.zipCode}
             alt={place.street}
-            src={`https://maps.googleapis.com/maps/api/staticmap?center=${
-              place.zipCode
-            }&zoom=18&markers=size:mid%7Ccolor:red%7C${
-              place.zipCode
-            }&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
+            title={place.street}
           />
         )}
         <div className="place-actions">

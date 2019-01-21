@@ -6,7 +6,7 @@ const Map = ({ zipCode, alt, title }) => (
     className="google-map"
     alt={alt}
     title={title}
-    src={`https://maps.googleapis.com/maps/api/staticmap?center=${zipCode}&zoom=18&markers=size:mid%7Ccolor:red%7C${zipCode}&size=600x400&key=600x400&key=AIzaSyAn7IQuLU0cUKDknHiLUaVn7fwkCJDhX8Q`}
+    src={`https://maps.googleapis.com/maps/api/staticmap?center=${zipCode}&zoom=18&markers=size:mid%7Ccolor:red%7C${zipCode}&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
   />
 );
 
