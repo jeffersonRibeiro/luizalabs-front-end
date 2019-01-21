@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose false",
     "test:coverage": "npm run test -- --coverage",
     "format": "prettier --write \"**/*.+(js|json|css)\"",
     "eject": "react-scripts eject"

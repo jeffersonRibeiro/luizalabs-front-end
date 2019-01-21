@@ -38,13 +38,19 @@ class Place extends Component {
 
     if (alreadyInFavorite) {
       favoriteButton = (
-        <button onClick={() => this.props.removeFavorite(place)}>
-          <IosHeart color={theme.heartColor} />
+        <button
+          className="place-favorite-button"
+          onClick={() => this.props.removeFavorite(place)}
+        >
+          <IosHeart color={theme.heartActiveColor} />
         </button>
       );
     } else {
       favoriteButton = (
-        <button onClick={() => this.props.addFavorite(place)}>
+        <button
+          className="place-favorite-button"
+          onClick={() => this.props.addFavorite(place)}
+        >
           <IosHeart color="#c8d6e5" />
         </button>
       );

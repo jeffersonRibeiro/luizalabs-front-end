@@ -15,7 +15,7 @@ const NavigationItems = ({ favoritePlaces }) => {
   let hearthIcon = null;
 
   if (favoritePlaces.length > 0) {
-    hearthIcon = <IosHeart beat color={theme.heartColor} />;
+    hearthIcon = <IosHeart beat color={theme.heartActiveColor} />;
   } else {
     hearthIcon = <IosHeart color="#c8d6e5" />;
   }

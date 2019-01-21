@@ -7,5 +7,5 @@ export const isObjectEmpty = obj =>
 export const theme = {
   primaryColor: '#7e40af',
   secondaryColor: '#48dbfb',
-  heartColor: '#fc5c65'
+  heartActiveColor: '#fc5c65'
 };

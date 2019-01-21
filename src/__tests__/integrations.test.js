@@ -1,34 +1,100 @@
-it('TODO', () => {});
-// it('should fetch cep when form submitted', () => {
-//   moxios.install();
-//   moxios.stubRequest(CEP_API('05586-030'), {
-//     status: 200,
-//     response: {
-//       city: 'São Paulo - SP',
-//       neighborhood: 'Vila Indiana',
-//       street: 'Rua Abadia dos Dourados',
-//       zipCode: '05586-030'
-//     }
-//   });
+import axios from 'axios';
+import moxios from 'moxios';
+import MaskedInput from 'react-text-mask';
+import { Provider } from 'react-redux';
 
-//   const wrapped = mount(
-//     <Root>
-//       <SearchForm />
-//     </Root>
-//   );
+import Root from '../Root';
+import App from '../components/App';
+import Place from '../components/Place';
 
-//   expect(wrapped.find(SearchForm).state().isLoading).toBe(false);
+import { CEP_API } from '../services/util';
+const cepMock = '05586-030';
+const searchResultMock = {
+  cep: '05586-030',
+  logradouro: 'Rua Abadia dos Dourados',
+  complemento: '',
+  bairro: 'Vila Indiana',
+  localidade: 'São Paulo',
+  uf: 'SP',
+  unidade: '',
+  ibge: '3550308',
+  gia: '1004'
+};
 
-//   wrapped.find('.search-button').simulate('click');
+beforeEach(() => {
+  moxios.install(axios);
+});
 
-//   expect(wrapped.find(SearchForm).isLoading).toBe(true);
+afterEach(() => {
+  moxios.uninstall();
+});
 
-//   moxios.wait(() => {
-//     wrapped.update();
-//     expect(wrapped.find(SearchForm).isLoading).toBe(false);
+it('should 1 place to favorite list and remove', done => {
+  moxios.stubRequest(CEP_API(cepMock), {
+    status: 200,
+    response: searchResultMock
+  });
 
-//     done
-//   });
+  const wrapped = mount(
+    <MemoryRouter initialEntries={['/search']}>
+      <Root>
+        <App />
+      </Root>
+    </MemoryRouter>
+  );
 
-//   wrapped.unmount();
-// });
+  /* Should start with 0 places found */
+  expect(wrapped.find(Place).length).toBe(0);
+
+  /* Type the CEP on the input element */
+  wrapped.find(MaskedInput).simulate('change', { target: { value: cepMock } });
+
+  /* Click on the submit button */
+  wrapped.find('.search-button').simulate('submit');
+
+  moxios.wait(() => {
+    wrapped.update();
+
+    /* Should find 1 place */
+    expect(wrapped.find(Place).length).toBe(1);
+
+    /* Should have 0 place added to favorite */
+    expect(
+      wrapped
+        .find(Provider)
+        .props()
+        .store.getState().favorite.places.length
+    ).toBe(0);
+
+    /* Add place to favorite */
+    wrapped
+      .find(Place)
+      .find('.place-favorite-button')
+      .simulate('click');
+
+    /* Should have 1 place added to favorite */
+    expect(
+      wrapped
+        .find(Provider)
+        .props()
+        .store.getState().favorite.places.length
+    ).toBe(1);
+
+    /* Remove place from favorite */
+    wrapped
+      .find(Place)
+      .find('.place-favorite-button')
+      .simulate('click');
+
+    /* Now should have 0 places in favorite again */
+    expect(
+      wrapped
+        .find(Provider)
+        .props()
+        .store.getState().favorite.places.length
+    ).toBe(0);
+
+    wrapped.unmount();
+    done();
+  });
+});
