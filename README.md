@@ -6,7 +6,7 @@
 
 ## Basic Overview - [Live Demo](https://luizalabs-229113.firebaseapp.com/)
 
-A basic Single Page application built with React to search places by CEP and save to favorites. The application is simple but is using advanced techniques of front end development like SPA navigation, Unit Tests, Integration Tests, Continuous Integration, Continuous Deployment, SASS, scaleable folder structure, ESlint and prettierrc to maintain code styling quality.
+A Single Page application built with React to search places by CEP and save to favorites. The application is simple but is using advanced techniques of front end development like SPA navigation, state management, Unit Tests, Integration Tests, continuous integration, continuous deployment, SASS, scaleable folder structure, ESlint and prettierrc to maintain code styling quality.
 
 #### Features
 
@@ -20,7 +20,7 @@ A basic Single Page application built with React to search places by CEP and sav
 
 - React
   - Redux - state management
-  - React-Router - SPA functionality
+  - React Router - SPA functionality
 - Axios - for promise HTTP requests
 - CSS
   - BEM methodology
@@ -54,7 +54,7 @@ A basic Single Page application built with React to search places by CEP and sav
 /* First, Install the needed packages */
 npm install
 
-/* Then start both Node and React */
+/* Then start the React app */
 npm start
 
 /* To run the tests */
