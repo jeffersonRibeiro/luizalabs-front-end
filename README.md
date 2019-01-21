@@ -54,13 +54,13 @@ You can check the code [here](https://github.com/jeffersonRibeiro/node-google-st
 
 ```javascript
 
-/* First, Install the needed packages */
+/* First, install the needed packages */
 npm install
 
-/* Then start the React app */
+/* then start the React app */
 npm start
 
-/* To run the tests */
+/* to run the tests */
 npm run test
 
 ```
