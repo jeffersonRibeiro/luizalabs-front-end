@@ -6,9 +6,9 @@
 
 ## Basic Overview - [Live Demo](https://luizalabs-229113.firebaseapp.com/)
 
-A Single Page application built with React to search places by CEP and save to favorites. The application is simple but is using advanced techniques of front end development like SPA navigation, state management, Unit Tests, Integration Tests, continuous integration, continuous deployment, SASS, scaleable folder structure, ESlint and prettierrc to maintain code styling quality.
+A Single Page application built with React to search places by CEP and save to favorites. The application is simple but is using advanced techniques of front end development like SPA navigation, state management, unit tests, integration tests, continuous integration, continuous deployment, SASS, scaleable folder structure, ESlint and prettierrc to maintain code styling quality.
 
-**Important:** _To secure my Google Maps API_KEY I've built a Node app and hosted it on Heroku and because of that it may take some time to first load the maps if the Heroku app is in sleep mode.
+**Important:** _To secure my Google Maps API_KEY I've built a Node app and hosted it on Heroku and because of that it may take a while to load the first map if the Heroku app is in sleep mode.
 You can check the code [here](https://github.com/jeffersonRibeiro/node-google-static-map-proxy)_
 
 #### Features
