@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+
+I'm using a node app hosted on Heroku to proxy
+the Google Static Map API and protect my API_KEY
+
+*/
+
 const Map = ({ zipCode, alt, title }) => (
   <img
     className="google-map"
     alt={alt}
     title={title}
-    src={`https://maps.googleapis.com/maps/api/staticmap?center=${zipCode}&zoom=18&markers=size:mid%7Ccolor:red%7C${zipCode}&size=600x400&key=AIzaSyCW3d9QMkhbwAcXa6mHj-Y-TnsMjcfW6uk`}
+    src={`https://luiza-labs-static-map.herokuapp.com/${zipCode}`}
   />
 );
 
