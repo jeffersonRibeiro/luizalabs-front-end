@@ -4,7 +4,9 @@
   <img src="./doc/app-demo.png">
 </p>
 
-## [Live Demo](https://luizalabs-229113.firebaseapp.com/)
+## Basic Overview - [Live Demo](https://luizalabs-229113.firebaseapp.com/)
+
+A basic Single Page application built with React to search places by CEP and save to favorites. The application is simple but is using advanced techniques of front end development like SPA navigation, Unit Tests, Integration Tests, Continuous Integration, Continuous Deployment, SASS, scaleable folder structure, ESlint and prettierrc to maintain code styling quality.
 
 #### Features
 
