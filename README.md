@@ -11,13 +11,14 @@
 - Search for a CEP and add to favorites
 - Favorite list persist after page reload
 - Responsive
-- **Unit tests, integration tests**
-- **CircleCI Continuous Integration and Deployiment with Firebase**
+- **Unit tests and integration tests**
+- **CircleCI Continuous Integration and Deployment with Firebase**
 
 #### Using
 
 - React
   - Redux - state management
+  - React-Router - SPA functionality
 - Axios - for promise HTTP requests
 - CSS
   - BEM methodology
