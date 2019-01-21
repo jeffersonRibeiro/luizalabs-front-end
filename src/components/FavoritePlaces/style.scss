@@ -1,6 +1,7 @@
 .favorite-places {
   display: flex;
   flex-wrap: wrap;
+  align-items: start;
 
   .place {
     width: 50%;
