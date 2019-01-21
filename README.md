@@ -6,6 +6,35 @@
 
 ## [Live Demo](https://luizalabs-229113.firebaseapp.com/)
 
+#### Features
+
+- Search for a CEP and add to favorites
+- Favorite list persist after page reload
+- Responsive
+- **Unit tests, integration tests**
+- **CircleCI Continuous Integration and Deployiment with Firebase**
+
+#### Using
+
+- React
+  - Redux - state management
+- Axios - for promise HTTP requests
+- CSS
+  - BEM methodology
+  - SASS
+- Moxios - to stub http request
+- Enzyme - to mount, shallow, render and query the DOM tree of React components
+- Native local storage - to persist products in cart even after page reload
+- CircleCI
+- Firebase
+
+## About tests
+
+- Unit tests
+  - All components have at least a basic smoke test
+- **Integration tests**
+  - **Search for a CEP and add place to favorite**
+
 ### Coverage report
 
 ![coverage](./doc/coverage-report.png 'coverage')
