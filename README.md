@@ -1,8 +1,14 @@
 ## Luizalabs Front End Test [![CircleCI](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end.svg?style=shield&circle-token=5a8843f9fcb781df4aa43bc76fc0f1460e012f8a)](https://circleci.com/gh/jeffersonRibeiro/luizalabs-front-end)
 
+<p align="center">
+  <img src="./doc/app-demo.png">
+</p>
+
 ## [Live Demo](https://luizalabs-229113.firebaseapp.com/)
 
-## Getting started
+### Coverage report
+
+![coverage](./doc/coverage-report.png 'coverage')
 
 ## Build/Run
 
